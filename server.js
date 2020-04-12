@@ -20,7 +20,7 @@ app.engine('hbs', exphbs({ extname: 'hbs', defaultLayout: 'mainLayout', layoutsD
 app.set('view engine', 'hbs');
 
 
-app.listen(3000, () => {
+app.listen(3001, () => {
     console.log('Express server started at port : 3000');
 });
 app.get('/', (req, res) =>{
