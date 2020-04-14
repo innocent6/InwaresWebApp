@@ -104,18 +104,6 @@ router.post('/', (req, res) => {
             else { console.log('Error in deleting Parent record :' + err); }
         });
     });
-    router.get('/phonecall', (req, res) => {
-        Parent.find((err, docs) => {
-            if (!err) {
-                res.render("phone/phonecall", {
-                    phonecall: docs
-                });
-            }
-            else {
-                console.log('Error in retrieving phone list :' + err);
-            }
-        });
-    });
     
     
 module.exports = router;
