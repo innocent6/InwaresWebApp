@@ -1,11 +1,16 @@
 const express = require('express');
-var router = express.Router();
+const router = express.Router();
 const mongoose = require('mongoose');
 const Parent = mongoose.model('Parent');
 
 router.get('/', (req, res) => {
     res.render("parents/addOrEdit", {
         viewTitle: "Add  Parents Details"
+    });
+    });
+router.get('/contact', (req, res) => {
+    res.render("parents/contact", {
+        viewTitle: "Here you contact parents"
     });
     });
 
@@ -102,7 +107,7 @@ router.post('/', (req, res) => {
     router.get('/phonecall', (req, res) => {
         Parent.find((err, docs) => {
             if (!err) {
-                res.render("parents/phonecall", {
+                res.render("phone/phonecall", {
                     phonecall: docs
                 });
             }
@@ -111,4 +116,6 @@ router.post('/', (req, res) => {
             }
         });
     });
+    
+    
 module.exports = router;
